@@ -40,7 +40,7 @@ export const projectData: Project[] = [
     contribution: [
       "Mengembangkan fitur sistem dan menerjemahkan rancangan antarmuka menjadi halaman aplikasi.",
       "Menyusun alur pencarian beasiswa berdasarkan wilayah dan kebutuhan pengguna.",
-      "Menerapkan prinsip aksesibilitas agar navigasi dan informasi lebih inklusif.",
+      "Mengimplementasikan fitur input dan manajemen rekening bank untuk penerima beasiswa dalam sistem pencairan dana.",
       "Berkolaborasi dalam tim melalui Git/GitHub dan proses pengembangan terstruktur.",
     ],
     features: [

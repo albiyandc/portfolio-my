@@ -466,7 +466,7 @@ ul { margin: 0; padding: 0; list-style: none; }
 /* ─── Social Grid ────────────────────────────────────────── */
 .social-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   border: 1px solid var(--border);
   border-top: none;
   margin: 0 calc(var(--content-pad) * -1);
@@ -487,10 +487,7 @@ ul { margin: 0; padding: 0; list-style: none; }
 }
 
 .social-btn:last-child { border-right: none; }
-.social-btn:nth-child(3) { border-right: none; }
-.social-btn:nth-child(n+4) {
-  border-top: 1px solid var(--border);
-}
+.social-btn:nth-child(4n) { border-right: none; }
 
 .social-btn:hover {
   background: var(--surface-2);

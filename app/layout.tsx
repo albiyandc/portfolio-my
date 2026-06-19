@@ -11,6 +11,11 @@ export const metadata: Metadata = {
   title: "Albiyan Dikha Chandra - Web Developer",
   description:
     "Portfolio Albiyan Dikha Chandra: Web Developer berbasis di Indonesia. Spesialisasi Next.js, React, Laravel, dan desain antarmuka yang bersih.",
+  icons: {
+    icon: "/adc.png",
+    shortcut: "/adc.png",
+    apple: "/adc.png",
+  },
   keywords: [
     "web developer",
     "portfolio",

@@ -15,7 +15,7 @@ const profile = {
   intro:
     "Saya membangun website yang rapi, cepat, dan mudah dipakai. Fokus saya ada di frontend, backend ringan, dan pengalaman pengguna yang terasa jelas sejak halaman pertama.",
   about:
-    "Portofolio ini dibuat sebagai rumah digital untuk menampilkan project, skill, dan perjalanan belajar saya. Saya percaya bahwa kode yang baik adalah kode yang bisa dibaca manusia, bukan hanya mesin.",
+    "Mahasiswa Sistem Informasi dengan passion di web development. Portofolio ini menampilkan project dan perjalanan belajar saya. Saya percaya pada pentingnya membangun solusi yang user-friendly dan selalu antusias belajar teknologi baru untuk menciptakan dampak positif.",
 };
 
 const roles = ["Web Developer", "Business Process Interest"];
