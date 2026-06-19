@@ -111,17 +111,6 @@ const education = [
     place: "Self-directed Learning",
     period: "Ongoing",
   },
-  {
-    title: "Web Fundamentals",
-    place: "Practice-based Projects",
-    period: "Completed",
-  },
-];
-
-const certifications = [
-  "Responsive Web Design",
-  "JavaScript Fundamentals",
-  "Git & GitHub Workflow",
 ];
 
 const SCRAMBLE_CHARS = "ABCDEFGHJKLMNPQRSTUVWXYZ0123456789";
@@ -641,7 +630,7 @@ export default function Home() {
           <div className="section-header">
             <span className="label">Background</span>
             <h2 className="section-title" id="education-h">
-              Education & Certifications
+              Education
             </h2>
           </div>
           <div className="education-list">
@@ -652,13 +641,6 @@ export default function Home() {
                   {item.place} / {item.period}
                 </p>
               </div>
-            ))}
-          </div>
-          <div className="cert-list">
-            {certifications.map((certification) => (
-              <span className="cert-tag" key={certification}>
-                {certification}
-              </span>
             ))}
           </div>
         </section>
