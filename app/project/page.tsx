@@ -18,7 +18,7 @@ export default function ProjectsPage() {
         <ProjectNav />
         <main>
           <section className="project-index-hero">
-            <span className="project-kicker">Selected projects / 02</span>
+            <span className="project-kicker">Selected projects / 04</span>
             <h1>Sistem digital yang tumbuh dari masalah nyata.</h1>
             <p>
               Pilihan project web development, kolaborasi tim, dan eksplorasi
@@ -27,34 +27,48 @@ export default function ProjectsPage() {
           </section>
 
           <section className="project-catalog" aria-label="Daftar project">
-            {projectData.map((project, index) => (
-              <Link
-                href={`/project/${project.slug}`}
-                className="catalog-card"
-                key={project.slug}
-              >
-                <div className="catalog-number">0{index + 1}</div>
-                <ProjectVisual
-                  slug={project.slug}
-                  name={project.name}
-                  src={project.cover}
-                />
-                <div className="catalog-copy">
-                  <div className="catalog-meta">
-                    <span>{project.category}</span>
-                    <span>{project.status}</span>
+            {projectData.map((project, index) => {
+              const card = (
+                <>
+                  <div className="catalog-number">0{index + 1}</div>
+                  <ProjectVisual
+                    slug={project.slug}
+                    name={project.name}
+                    src={project.cover}
+                  />
+                  <div className="catalog-copy">
+                    <div className="catalog-meta">
+                      <span>{project.category}</span>
+                      {project.status && <span>{project.status}</span>}
+                    </div>
+                    <h2>{project.name}</h2>
+                    <p>{project.summary}</p>
+                    <div className="catalog-stack">
+                      {project.stack.slice(0, 4).map((tech) => (
+                        <span key={tech}>{tech}</span>
+                      ))}
+                    </div>
                   </div>
-                  <h2>{project.name}</h2>
-                  <p>{project.summary}</p>
-                  <div className="catalog-stack">
-                    {project.stack.slice(0, 4).map((tech) => (
-                      <span key={tech}>{tech}</span>
-                    ))}
-                  </div>
-                </div>
-                <span className="catalog-arrow" aria-hidden="true">↗</span>
-              </Link>
-            ))}
+                  {project.detailAvailable && (
+                    <span className="catalog-arrow" aria-hidden="true">↗</span>
+                  )}
+                </>
+              );
+
+              return project.detailAvailable ? (
+                <Link
+                  href={`/project/${project.slug}`}
+                  className="catalog-card"
+                  key={project.slug}
+                >
+                  {card}
+                </Link>
+              ) : (
+                <article className="catalog-card catalog-card-static" key={project.slug}>
+                  {card}
+                </article>
+              );
+            })}
           </section>
         </main>
         <footer className="project-footer">© 2026 Albiyan Dikha Chandra</footer>

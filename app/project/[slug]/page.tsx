@@ -9,19 +9,23 @@ import { getProject, projectData } from "../project-data";
 type Props = { params: Promise<{ slug: string }> };
 
 export function generateStaticParams() {
-  return projectData.map(({ slug }) => ({ slug }));
+  return projectData
+    .filter((project) => project.detailAvailable)
+    .map(({ slug }) => ({ slug }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const project = getProject((await params).slug);
-  if (!project) return {};
+  if (!project || !project.detailAvailable) return {};
   return { title: `${project.name} — Albiyan Dikha Chandra`, description: project.summary };
 }
 
 export default async function ProjectDetailPage({ params }: Props) {
   const project = getProject((await params).slug);
-  if (!project) notFound();
-  const nextProject = projectData.find((item) => item.slug !== project.slug)!;
+  if (!project || !project.detailAvailable) notFound();
+  const nextProject = projectData.find(
+    (item) => item.detailAvailable && item.slug !== project.slug,
+  );
 
   return (
     <>
@@ -94,10 +98,12 @@ export default async function ProjectDetailPage({ params }: Props) {
             </div>
           </section>
 
-          <Link href={`/project/${nextProject.slug}`} className="next-project">
-            <span>Project berikutnya</span>
-            <strong>{nextProject.name} ↗</strong>
-          </Link>
+          {nextProject && (
+            <Link href={`/project/${nextProject.slug}`} className="next-project">
+              <span>Project berikutnya</span>
+              <strong>{nextProject.name} ↗</strong>
+            </Link>
+          )}
         </main>
         <footer className="project-footer">© 2026 Albiyan Dikha Chandra</footer>
       </div>

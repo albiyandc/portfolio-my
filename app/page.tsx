@@ -6,24 +6,26 @@ const profile = {
   name: "Albiyan Dikha Chandra",
   short: "ADC",
   initials: "ADC",
-  status: "Available for internship",
-  location: "Indonesia",
+  role: "Information Systems | Full-Stack Web Developer",
+  status: "Based in Bandung",
+  location: "Bandung",
   email: "albiyandc65@gmail.com",
   whatsapp: "https://wa.me/6281220301650",
   github: "https://github.com/albiyandc",
   linkedin: "https://www.linkedin.com/in/albiyandc",
+  portfolio: "https://albiyandc.vercel.app",
   intro:
-    "Saya membangun website yang rapi, cepat, dan mudah dipakai. Fokus saya ada di frontend, backend ringan, dan pengalaman pengguna yang terasa jelas sejak halaman pertama.",
+    "Saya merancang dan membangun full-stack web app serta sistem informasi dengan perhatian pada alur pengguna, struktur data, dan implementasi yang terukur.",
   about:
-    "Mahasiswa Sistem Informasi dengan passion di web development. Portofolio ini menampilkan project dan perjalanan belajar saya. Saya percaya pada pentingnya membangun solusi yang user-friendly dan selalu antusias belajar teknologi baru untuk menciptakan dampak positif.",
+    "Mahasiswa S1 Sistem Informasi di Telkom University yang berfokus pada full-stack web development dan system design. Saya menggunakan Next.js, React, Laravel, PHP, MySQL, serta Git/GitHub untuk menerjemahkan kebutuhan pengguna dan proses bisnis menjadi aplikasi yang jelas dan dapat digunakan.",
 };
 
-const roles = ["Web Developer", "Business Process Interest"];
+const roles = ["Full-Stack Web Developer", "Information Systems"];
 
 const infoItems = [
-  { label: "Based in", value: "Indonesia - Telkom University", icon: <SchoolIcon /> },
-  { label: "Role", value: "Web Developer", icon: <WebIcon /> },
-  { label: "Field", value: "Information System", icon: <DeveloperGuideIcon /> },
+  { label: "Based in", value: profile.location, icon: <SchoolIcon /> },
+  { label: "Role", value: profile.role, icon: <WebIcon /> },
+  { label: "Focus", value: "Web Apps / System Design", icon: <DeveloperGuideIcon /> },
   { label: "Stack", value: "Next.js / Laravel", icon: <CodeXmlIcon /> },
 ];
 
@@ -37,37 +39,67 @@ const socials = [
 const stackCategories = [
   {
     num: "01",
-    name: "Frontend",
+    name: "Web Development",
     items: [
       { name: "JavaScript", Icon: JsIcon },
       { name: "TypeScript", Icon: TsIcon },
+      { name: "PHP", Icon: PhpIcon },
+      { name: "Laravel", Icon: LaravelIcon },
+      { name: "Blade", Icon: CodeXmlIcon },
+      { name: "React", Icon: CodeXmlIcon },
       { name: "Next.js", Icon: NextIcon },
       { name: "Tailwind CSS", Icon: TailwindIcon },
-      { name: "Figma", Icon: FigmaIcon },
     ],
   },
   {
     num: "02",
-    name: "Backend",
+    name: "API / DB / Systems",
     items: [
-      { name: "PHP", Icon: PhpIcon },
-      { name: "Laravel", Icon: LaravelIcon },
+      { name: "REST API", Icon: RestIcon },
       { name: "MySQL", Icon: MysqlIcon },
-      { name: "Supabase", Icon: SupabaseIcon },
+      { name: "DB Design", Icon: DeveloperGuideIcon },
+      { name: "RBAC", Icon: DeveloperGuideIcon },
+      { name: "Process Modeling", Icon: CodeXmlIcon },
     ],
   },
   {
     num: "03",
-    name: "DevOps / Cloud",
+    name: "Mobile / UI / Tools",
     items: [
+      { name: "Flutter", Icon: CodeXmlIcon },
+      { name: "Figma", Icon: FigmaIcon },
+      { name: "UI Prototyping", Icon: FigmaIcon },
       { name: "Git", Icon: GitIcon },
       { name: "GitHub", Icon: GitHubIcon },
-      { name: "Visual Studio Code", Icon: VsCodeIcon },
+      { name: "Visual Paradigm", Icon: DeveloperGuideIcon },
     ],
   },
 ];
 
-const projects = [
+type HomeProject = {
+  name: string;
+  type: string;
+  description: string;
+  stack: string[];
+  status?: string;
+  href?: string;
+};
+
+const projects: HomeProject[] = [
+  {
+    name: "SIMAT-SIPP",
+    type: "Aplikasi e-Government",
+    description:
+      "Sistem layanan publik dengan alur CRUD, validasi, master layanan dan instansi, persyaratan, dokumen, serta approval.",
+    stack: ["PHP", "Laravel", "Blade", "MySQL", "REST API"],
+  },
+  {
+    name: "SATU-RUMAH",
+    type: "Mobile App",
+    description:
+      "Prototype Flutter untuk tiga peran: developer perumahan, admin, dan field monitoring, dengan alur pengajuan, verifikasi, penugasan, pelaporan, bukti foto, serta Berita Acara berbasis role.",
+    stack: ["Flutter"],
+  },
   {
     name: "BantuBeasiswa",
     type: "Programmer",
@@ -90,26 +122,20 @@ const projects = [
 
 const experience = [
   {
-    role: "Web Developer – Projek Akademik",
-    company: "",
-    period: "2024 - Sekarang",
+    role: "Peserta Magang Aptika / Aplikasi e-Government",
+    company: "Dinas Komunikasi dan Informatika Kota Tasikmalaya · Tasikmalaya",
+    period: "Jul 2026 — Sep 2026",
     description:
-      "Terlibat dalam pengembangan aplikasi web fullstack, mencakup implementasi fitur frontend dan backend. Merancang struktur database untuk mendukung alur kerja multi-user, serta berpartisipasi aktif dalam kolaborasi tim menggunakan version control dan praktik development yang terstruktur.",
-  },
-  {
-    role: "Mahasiswa – Sistem Informasi",
-    company: "Telkom University",
-    period: "2023 - Sekarang",
-    description:
-      "Mengambil beban akademik reguler dengan fokus pada mata kuliah praktis di bidang web development dan business process. Aktif mengikuti pembelajaran berbasis proyek dan studi kasus real-world untuk memperdalam pemahaman tentang pengembangan sistem informasi modern.",
+      "Berkontribusi pada SIMAT melalui CRUD dan validasi layanan publik, master layanan dan instansi, persyaratan, dokumen, serta approval. Merancang relasi data dan API untuk dashboard SIPP terpisah, menjadi koordinator tim lintas kampus, dan menyusun user flow serta dokumentasi SATU-RUMAH.",
   },
 ];
 
 const education = [
   {
-    title: "Software Development",
-    place: "Self-directed Learning",
-    period: "Ongoing",
+    title: "S1 Sistem Informasi",
+    place: "Telkom University · Bandung",
+    period: "Sep 2023 — Sekarang",
+    gpa: "IPK 3.67 / 4.00",
   },
 ];
 
@@ -442,6 +468,45 @@ function CelestialBackground() {
   );
 }
 
+function ProjectCard({ project }: { project: HomeProject }) {
+  const card = (
+    <>
+      <div>
+        <p className="project-name">{project.name}</p>
+        <p className="project-desc">{project.description}</p>
+        <div className="project-tags">
+          <span className="project-tag">{project.type}</span>
+          {project.status && (
+            <span className="project-tag project-status">
+              {project.status}
+            </span>
+          )}
+          {project.stack.map((tag) => (
+            <span className="project-tag" key={tag}>
+              {tag}
+            </span>
+          ))}
+        </div>
+      </div>
+      {project.href && (
+        <span className="project-arrow" aria-hidden="true">
+          <ArrowUpRightIcon />
+        </span>
+      )}
+    </>
+  );
+
+  if (project.href) {
+    return (
+      <a href={project.href} className="project-item">
+        {card}
+      </a>
+    );
+  }
+
+  return <article className="project-item project-item-static">{card}</article>;
+}
+
 export default function Home() {
   const { display, play } = useNameScramble(profile.name);
   const [roleIndex, setRoleIndex] = useState(0);
@@ -457,22 +522,22 @@ export default function Home() {
     <>
       <CelestialBackground />
       <div className="shell">
-      <div className="rail rail-left" aria-hidden="true" />
-      <div className="rail rail-right" aria-hidden="true" />
+        <div className="rail rail-left" aria-hidden="true" />
+        <div className="rail rail-right" aria-hidden="true" />
 
-      <header className="navbar">
-        <div className="navbar-inner">
-          <a href="#top" className="brand" aria-label="Home">
-            albiyandc.dev
-          </a>
-          <nav className="nav-links" aria-label="Main navigation">
-            <a href="#top">Home</a>
-            <a href="/project">Projects</a>
-          </nav>
-        </div>
-      </header>
+        <header className="navbar">
+          <div className="navbar-inner">
+            <a href="#top" className="brand" aria-label="Home">
+              albiyandc.vercel.app
+            </a>
+            <nav className="nav-links" aria-label="Main navigation">
+              <a href="#top">Home</a>
+              <a href="/project">Projects</a>
+            </nav>
+          </div>
+        </header>
 
-      <main className="page-content" id="top">
+        <main className="page-content" id="top">
         <section className="hero" aria-label="Introduction">
           <div className="hero-top">
             <div className="avatar" aria-hidden="true">
@@ -577,26 +642,7 @@ export default function Home() {
           </div>
           <div className="project-list">
             {projects.map((project) => (
-              <a key={project.name} href={project.href} className="project-item">
-                <div>
-                  <p className="project-name">{project.name}</p>
-                  <p className="project-desc">{project.description}</p>
-                  <div className="project-tags">
-                    <span className="project-tag">{project.type}</span>
-                    <span className="project-tag project-status">
-                      {project.status}
-                    </span>
-                    {project.stack.map((tag) => (
-                      <span className="project-tag" key={tag}>
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-                <span className="project-arrow">
-                  <ArrowUpRightIcon />
-                </span>
-              </a>
+              <ProjectCard key={project.name} project={project} />
             ))}
           </div>
         </section>
@@ -640,6 +686,7 @@ export default function Home() {
                 <p className="edu-meta">
                   {item.place} / {item.period}
                 </p>
+                <p className="edu-gpa">{item.gpa}</p>
               </div>
             ))}
           </div>
@@ -693,14 +740,14 @@ export default function Home() {
             </div>
           </div>
         </section>
-      </main>
+        </main>
 
-      <footer className="footer">
-        <span>
-          Copyright {new Date().getFullYear()} Albiyan Dikha Chandra / Built
-          with Next.js
-        </span>
-      </footer>
+        <footer className="footer">
+          <span>
+            Copyright {new Date().getFullYear()} Albiyan Dikha Chandra / Built
+            with Next.js
+          </span>
+        </footer>
       </div>
     </>
   );

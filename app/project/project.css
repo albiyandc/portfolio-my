@@ -115,6 +115,8 @@
 
 .catalog-card:last-child { border-bottom: 1px solid var(--border); }
 .catalog-card:hover { background: rgba(99, 102, 241, 0.045); border-color: var(--border-soft); }
+.catalog-card-static { cursor: default; }
+.catalog-card-static:hover { background: rgba(17, 17, 24, 0.72); }
 
 .catalog-number {
   align-self: start;
@@ -138,6 +140,20 @@
   object-fit: cover;
   object-position: top center;
   transition: transform 500ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.project-visual-placeholder {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  color: rgba(190, 191, 255, 0.7);
+  background:
+    radial-gradient(circle at 70% 28%, rgba(99, 102, 241, 0.24), transparent 32%),
+    linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(13, 13, 21, 0.92));
+  font-family: 'Courier New', monospace;
+  font-size: 0.82rem;
+  letter-spacing: 0.16em;
 }
 
 .catalog-card:hover .project-cover-image { transform: scale(1.025); }

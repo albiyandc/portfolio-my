@@ -113,6 +113,11 @@ a { color: inherit; text-decoration: none; }
 h1, h2, h3, h4, p { margin: 0; }
 ul { margin: 0; padding: 0; list-style: none; }
 
+:focus-visible {
+  outline: 2px solid #a5a7ff;
+  outline-offset: 3px;
+}
+
 /* ─── Layout Shell ──────────────────────────────────────── */
 .shell {
   position: relative;
@@ -316,6 +321,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   display: flex;
   align-items: center;
   gap: 10px;
+  line-height: 1.45;
 }
 
 @property --clock-fill {
@@ -638,6 +644,14 @@ ul { margin: 0; padding: 0; list-style: none; }
 
 .project-item:hover { background: var(--surface); }
 
+.project-item-static {
+  cursor: default;
+}
+
+.project-item-static:hover {
+  background: rgba(17, 17, 24, 0.72);
+}
+
 .project-name {
   font-size: 0.92rem;
   font-weight: 650;
@@ -762,6 +776,13 @@ ul { margin: 0; padding: 0; list-style: none; }
 .edu-meta {
   font-size: 0.78rem;
   color: var(--text-dim);
+}
+
+.edu-gpa {
+  margin-top: 3px;
+  color: #a5a7ff;
+  font-size: 0.76rem;
+  font-weight: 600;
 }
 
 /* ─── Contact ────────────────────────────────────────────── */

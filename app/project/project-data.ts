@@ -4,18 +4,47 @@ export type Project = {
   category: string;
   headline: string;
   summary: string;
-  status: string;
-  period: string;
-  role: string;
-  cover: string;
+  status?: string;
+  period?: string;
+  role?: string;
+  cover?: string;
   images: string[];
   stack: string[];
   challenge: string;
   contribution: string[];
   features: string[];
+  detailAvailable: boolean;
 };
 
 export const projectData: Project[] = [
+  {
+    slug: "simat-sipp",
+    name: "SIMAT-SIPP",
+    category: "Aplikasi e-Government",
+    headline: "Sistem layanan publik dengan alur data yang saling terhubung.",
+    summary:
+      "Project aplikasi layanan publik dengan CRUD dan validasi, master layanan serta instansi, persyaratan, dokumen, approval, dan API untuk dashboard SIPP terpisah.",
+    images: [],
+    stack: ["PHP", "Laravel", "Blade", "MySQL", "REST API"],
+    challenge: "",
+    contribution: [],
+    features: [],
+    detailAvailable: false,
+  },
+  {
+    slug: "satu-rumah",
+    name: "SATU-RUMAH",
+    category: "Mobile Application",
+    headline: "Prototype mobile dengan workflow berbasis peran.",
+    summary:
+      "Prototype Flutter untuk developer perumahan, admin, dan field monitoring dengan workflow pengajuan, verifikasi, penugasan, pelaporan, bukti foto, serta Berita Acara.",
+    images: [],
+    stack: ["Flutter"],
+    challenge: "",
+    contribution: [],
+    features: [],
+    detailAvailable: false,
+  },
   {
     slug: "bantubeasiswa",
     name: "BantuBeasiswa",
@@ -49,6 +78,7 @@ export const projectData: Project[] = [
       "Detail persyaratan dan tenggat",
       "Antarmuka berorientasi WCAG",
     ],
+    detailAvailable: true,
   },
   {
     slug: "trashmana",
@@ -87,6 +117,7 @@ export const projectData: Project[] = [
       "Marketplace produk daur ulang",
       "Input lokasi berbasis peta",
     ],
+    detailAvailable: true,
   },
 ];
 

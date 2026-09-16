@@ -1,16 +1,10 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({
-  subsets: ["latin"],
-  display: "swap",
-});
-
 export const metadata: Metadata = {
-  title: "Albiyan Dikha Chandra - Web Developer",
+  title: "Albiyan Dikha Chandra | Information Systems & Full-Stack Web Developer",
   description:
-    "Portfolio Albiyan Dikha Chandra: Web Developer berbasis di Indonesia. Spesialisasi Next.js, React, Laravel, dan desain antarmuka yang bersih.",
+    "Portfolio Albiyan Dikha Chandra, mahasiswa Sistem Informasi dan full-stack web developer berbasis di Bandung.",
   icons: {
     icon: "/adc.png",
     shortcut: "/adc.png",
@@ -19,16 +13,19 @@ export const metadata: Metadata = {
   keywords: [
     "web developer",
     "portfolio",
+    "information systems",
     "Next.js",
     "React",
     "Laravel",
+    "PHP",
+    "MySQL",
     "Indonesia",
   ],
   authors: [{ name: "Albiyan Dikha Chandra" }],
   openGraph: {
-    title: "Albiyan Dikha Chandra - Web Developer",
+    title: "Albiyan Dikha Chandra | Full-Stack Web Developer",
     description:
-      "Portfolio Albiyan Dikha Chandra: Web Developer berbasis di Indonesia.",
+      "Portfolio Albiyan Dikha Chandra, mahasiswa Sistem Informasi dan full-stack web developer berbasis di Bandung.",
     type: "website",
   },
 };
@@ -40,7 +37,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="id">
-      <body className={inter.className}>{children}</body>
+      <body>{children}</body>
     </html>
   );
 }
