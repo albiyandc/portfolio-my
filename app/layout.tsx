@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Albiyan Dikha Chandra | Information Systems & Full-Stack Web Developer",
+  title: "Albiyan Dikha Chandra | Pengembang Web Full-Stack",
   description:
-    "Portfolio Albiyan Dikha Chandra, mahasiswa Sistem Informasi dan full-stack web developer berbasis di Bandung.",
+    "Portofolio Albiyan Dikha Chandra, mahasiswa Sistem Informasi dan pengembang web full-stack berbasis di Bandung.",
   icons: {
     icon: "/adc.png",
     shortcut: "/adc.png",
@@ -23,9 +23,9 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Albiyan Dikha Chandra" }],
   openGraph: {
-    title: "Albiyan Dikha Chandra | Full-Stack Web Developer",
+    title: "Albiyan Dikha Chandra | Pengembang Web Full-Stack",
     description:
-      "Portfolio Albiyan Dikha Chandra, mahasiswa Sistem Informasi dan full-stack web developer berbasis di Bandung.",
+      "Portofolio Albiyan Dikha Chandra, mahasiswa Sistem Informasi dan pengembang web full-stack berbasis di Bandung.",
     type: "website",
   },
 };
@@ -36,7 +36,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="id">
+    <html lang="id" data-scroll-behavior="smooth">
       <body>{children}</body>
     </html>
   );

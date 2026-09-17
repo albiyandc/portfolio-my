@@ -2,10 +2,9 @@ export type Project = {
   slug: string;
   name: string;
   category: string;
+  platform: "web" | "mobile";
   headline: string;
   summary: string;
-  status?: string;
-  period?: string;
   role?: string;
   cover?: string;
   images: string[];
@@ -20,40 +19,87 @@ export const projectData: Project[] = [
   {
     slug: "simat-sipp",
     name: "SIMAT-SIPP",
-    category: "Aplikasi e-Government",
-    headline: "Sistem layanan publik dengan alur data yang saling terhubung.",
+    category: "Aplikasi pemerintahan",
+    platform: "web",
+    headline: "Modul pelayanan publik dengan data yang terhubung ke SIPP.",
     summary:
-      "Project aplikasi layanan publik dengan CRUD dan validasi, master layanan serta instansi, persyaratan, dokumen, approval, dan API untuk dashboard SIPP terpisah.",
-    images: [],
+      "Modul Pelayanan Publik pada SIMAT yang mencakup CRUD, validasi, master layanan, instansi, persyaratan, dokumen, dan alur persetujuan. Data layanan tersedia melalui REST API untuk dashboard SIPP terpisah.",
+    role: "Peserta Magang Aptika dan Koordinator Proyek",
+    cover: "/projects/simat_sipp/Screenshot 2026-09-18 023244.webp",
+    images: [
+      "/projects/simat_sipp/Screenshot 2026-09-18 023244.webp",
+      "/projects/simat_sipp/Screenshot 2026-09-17 125808.webp",
+      "/projects/simat_sipp/Screenshot 2026-09-17 125820.webp",
+      "/projects/simat_sipp/Screenshot 2026-09-17 125830.webp",
+      "/projects/simat_sipp/Screenshot 2026-09-17 125945.webp",
+      "/projects/simat_sipp/screencapture-2026-09-17-13_00_20.webp",
+    ],
     stack: ["PHP", "Laravel", "Blade", "MySQL", "REST API"],
-    challenge: "",
-    contribution: [],
-    features: [],
-    detailAvailable: false,
+    challenge:
+      "SIMAT membutuhkan modul Pelayanan Publik untuk mengelola layanan, instansi, persyaratan, dokumen, dan alur persetujuan. Data SIMAT juga perlu tersedia untuk dashboard SIPP terpisah melalui API.",
+    contribution: [
+      "Mengembangkan modul web Pelayanan Publik pada SIMAT.",
+      "Mengimplementasikan CRUD dan validasi untuk master layanan, instansi, persyaratan, dan dokumen.",
+      "Menyusun struktur serta relasi data SIMAT-SIPP.",
+      "Mengembangkan REST API untuk dashboard pelayanan publik terpisah.",
+      "Menerjemahkan kebutuhan sistem dan membagi tugas sebagai Koordinator Proyek bagi tim lintas kampus.",
+    ],
+    features: [
+      "CRUD dan validasi layanan publik",
+      "Master layanan dan instansi",
+      "Persyaratan dan dokumen",
+      "Alur persetujuan",
+      "REST API untuk dashboard SIPP",
+    ],
+    detailAvailable: true,
   },
   {
     slug: "satu-rumah",
     name: "SATU-RUMAH",
-    category: "Mobile Application",
-    headline: "Prototype mobile dengan workflow berbasis peran.",
+    category: "Aplikasi mobile",
+    platform: "mobile",
+    headline: "Prototipe monitoring perumahan untuk tiga peran pengguna.",
     summary:
-      "Prototype Flutter untuk developer perumahan, admin, dan field monitoring dengan workflow pengajuan, verifikasi, penugasan, pelaporan, bukti foto, serta Berita Acara.",
-    images: [],
+      "Prototipe Flutter untuk pengembang perumahan, admin, dan tim monitoring lapangan dengan alur pengajuan, verifikasi, penugasan, pelaporan, bukti foto, serta Berita Acara.",
+    role: "Koordinator Proyek dan Kontributor Pengembangan",
+    cover: "/projects/satu_rumah/Screenshot 2026-09-18 011506.png",
+    images: [
+      "/projects/satu_rumah/Screenshot 2026-09-18 011453.png",
+      "/projects/satu_rumah/Screenshot 2026-09-18 011506.png",
+      "/projects/satu_rumah/Screenshot 2026-09-18 011535.png",
+      "/projects/satu_rumah/Screenshot 2026-09-18 011610.png",
+      "/projects/satu_rumah/Screenshot 2026-09-18 011638.png",
+      "/projects/satu_rumah/Screenshot 2026-09-18 011651.png",
+      "/projects/satu_rumah/Screenshot 2026-09-18 011701.png",
+    ],
     stack: ["Flutter"],
-    challenge: "",
-    contribution: [],
-    features: [],
-    detailAvailable: false,
+    challenge:
+      "Prototipe SATU-RUMAH perlu menampung alur pengajuan, verifikasi, penugasan monitoring, pelaporan, bukti foto, dan Berita Acara untuk pengembang perumahan, admin, serta tim monitoring lapangan.",
+    contribution: [
+      "Mengembangkan prototipe aplikasi untuk pengembang perumahan, admin, dan tim monitoring lapangan.",
+      "Merancang antarmuka, navigasi, dan alur kerja pengajuan serta verifikasi.",
+      "Menyusun alur penugasan monitoring, pelaporan, bukti foto, dan Berita Acara.",
+      "Menerapkan logika interaksi dan pembagian akses berdasarkan peran pengguna.",
+      "Berkontribusi pada dokumentasi sistem.",
+    ],
+    features: [
+      "Pengajuan dan verifikasi perumahan",
+      "Penugasan monitoring lapangan",
+      "Pelaporan hasil monitoring",
+      "Bukti foto",
+      "Berita Acara",
+      "Akses berdasarkan peran pengguna",
+    ],
+    detailAvailable: true,
   },
   {
     slug: "bantubeasiswa",
     name: "BantuBeasiswa",
-    category: "Education Platform",
-    headline: "Akses informasi beasiswa yang lebih dekat untuk wilayah 3T.",
+    category: "Platform pendidikan",
+    platform: "web",
+    headline: "Pencarian beasiswa berdasarkan wilayah.",
     summary:
-      "Katalog beasiswa terintegrasi dengan pencarian berbasis wilayah dan pendekatan aksesibilitas WCAG.",
-    status: "Work in Progress",
-    period: "2026",
+      "Katalog beasiswa dengan pencarian berbasis wilayah.",
     role: "Programmer",
     cover: "/projects/bantubeasiswa/screen-2.png",
     images: [
@@ -76,20 +122,18 @@ export const projectData: Project[] = [
       "Katalog beasiswa terpusat",
       "Pencarian dan filter berbasis wilayah",
       "Detail persyaratan dan tenggat",
-      "Antarmuka berorientasi WCAG",
     ],
     detailAvailable: true,
   },
   {
     slug: "trashmana",
     name: "Trashmana",
-    category: "Waste Management System",
-    headline: "Satu alur digital untuk warga, bank sampah, petugas, dan UMKM.",
+    category: "Sistem pengelolaan sampah",
+    platform: "web",
+    headline: "Satu alur untuk pelaporan dan operasional pengelolaan sampah.",
     summary:
-      "Platform manajemen sampah untuk pelaporan, penjemputan, operasional, serta marketplace produk daur ulang.",
-    status: "Beta",
-    period: "2025 — 2026",
-    role: "Project Manager & Lead Contributor",
+      "Platform pengelolaan sampah untuk pelaporan, penjemputan, operasional, serta pasar produk daur ulang.",
+    role: "Manajer proyek dan kontributor utama",
     cover: "/projects/trashmana/screen-1.png",
     images: [
       "/projects/trashmana/screen-1.png",
@@ -100,12 +144,12 @@ export const projectData: Project[] = [
       "/projects/trashmana/screen-6.png",
       "/projects/trashmana/screen-7.png",
     ],
-    stack: ["Laravel 12", "PHP 8.2", "MySQL", "Blade", "Tailwind CSS", "Leaflet.js"],
+    stack: ["Laravel", "PHP", "MySQL", "Blade", "Tailwind CSS", "Leaflet.js"],
     challenge:
       "Pengelolaan sampah komunitas sering terhambat oleh pelaporan yang terpisah dan koordinasi yang tidak jelas antara warga, pengelola bank sampah, petugas lapangan, dan pelaku UMKM.",
     contribution: [
       "Memimpin perencanaan proyek sekaligus menjadi kontributor utama pengembangan.",
-      "Merancang sistem role-based untuk lima jenis pengguna dengan kebutuhan berbeda.",
+      "Merancang sistem berbasis peran untuk lima jenis pengguna dengan kebutuhan berbeda.",
       "Mengembangkan alur pelaporan, penjemputan, dan pelacakan status operasional.",
       "Mengintegrasikan input lokasi berbasis peta menggunakan Leaflet.js.",
     ],

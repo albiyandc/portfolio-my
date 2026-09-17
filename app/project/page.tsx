@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ArrowUpRightIcon } from "@phosphor-icons/react/dist/ssr/ArrowUpRight";
 import Link from "next/link";
 import StarTrail from "../components/StarTrail";
 import ProjectNav from "./ProjectNav";
@@ -6,8 +7,8 @@ import ProjectVisual from "./ProjectVisual";
 import { projectData } from "./project-data";
 
 export const metadata: Metadata = {
-  title: "Projects — Albiyan Dikha Chandra",
-  description: "Project pilihan Albiyan Dikha Chandra dalam web development dan sistem informasi.",
+  title: "Proyek | Albiyan Dikha Chandra",
+  description: "Proyek pilihan Albiyan Dikha Chandra dalam pengembangan web dan sistem informasi.",
 };
 
 export default function ProjectsPage() {
@@ -18,15 +19,15 @@ export default function ProjectsPage() {
         <ProjectNav />
         <main>
           <section className="project-index-hero">
-            <span className="project-kicker">Selected projects / 04</span>
-            <h1>Sistem digital yang tumbuh dari masalah nyata.</h1>
+            <span className="project-kicker">Selected work / 04</span>
+            <h1>Web, mobile, and information systems.</h1>
             <p>
-              Pilihan project web development, kolaborasi tim, dan eksplorasi
-              proses bisnis yang saya kerjakan.
+              Empat karya yang saya kerjakan dari alur layanan publik sampai
+              pelacakan operasional.
             </p>
           </section>
 
-          <section className="project-catalog" aria-label="Daftar project">
+          <section className="project-catalog" aria-label="Daftar proyek">
             {projectData.map((project, index) => {
               const card = (
                 <>
@@ -34,12 +35,13 @@ export default function ProjectsPage() {
                   <ProjectVisual
                     slug={project.slug}
                     name={project.name}
+                    category={project.category}
+                    platform={project.platform}
                     src={project.cover}
                   />
                   <div className="catalog-copy">
                     <div className="catalog-meta">
                       <span>{project.category}</span>
-                      {project.status && <span>{project.status}</span>}
                     </div>
                     <h2>{project.name}</h2>
                     <p>{project.summary}</p>
@@ -50,7 +52,9 @@ export default function ProjectsPage() {
                     </div>
                   </div>
                   {project.detailAvailable && (
-                    <span className="catalog-arrow" aria-hidden="true">↗</span>
+                    <span className="catalog-arrow" aria-hidden="true">
+                      <ArrowUpRightIcon size={21} weight="regular" />
+                    </span>
                   )}
                 </>
               );
