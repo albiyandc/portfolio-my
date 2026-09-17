@@ -208,6 +208,59 @@
 .detail-hero h1 { margin: 14px 0; font-size: clamp(3rem, 8vw, 6.8rem); line-height: 0.9; letter-spacing: -0.065em; }
 .detail-hero p { max-width: 690px; color: var(--text-muted); font-size: clamp(1.1rem, 2.4vw, 1.45rem); line-height: 1.55; }
 
+.project-external-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin: 0 12px 32px;
+  padding: 20px 22px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface);
+}
+
+.project-external-copy {
+  display: grid;
+  gap: 4px;
+}
+
+.project-external-copy span {
+  color: var(--text-dim);
+  font-family: 'Courier New', monospace;
+  font-size: 0.66rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.project-external-copy strong {
+  color: var(--text);
+  font-size: 0.95rem;
+  font-weight: 650;
+}
+
+.project-external-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  flex-shrink: 0;
+  padding: 0 14px;
+  border: 1px solid var(--border-soft);
+  border-radius: 6px;
+  color: var(--text-muted);
+  background: var(--surface-2);
+  font-size: 0.8rem;
+  font-weight: 600;
+  transition: background 150ms, border-color 150ms, color 150ms;
+}
+
+.project-external-link:hover {
+  border-color: var(--accent);
+  color: var(--text);
+  background: var(--surface-2);
+}
+
 .detail-facts {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
@@ -464,6 +517,14 @@
   .catalog-copy h2 { font-size: 1.55rem; }
 
   .detail-hero { padding: 56px 0 42px; }
+  .project-external-card {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 16px;
+    margin-inline: 0;
+    padding: 18px;
+  }
+  .project-external-link { justify-content: center; }
   .detail-hero h1 {
     font-size: clamp(2.35rem, 13vw, 3.4rem);
     line-height: 0.96;

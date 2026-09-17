@@ -7,6 +7,8 @@ export type Project = {
   summary: string;
   role?: string;
   cover?: string;
+  externalUrl?: string;
+  externalLabel?: string;
   images: string[];
   stack: string[];
   challenge: string;
@@ -25,6 +27,8 @@ export const projectData: Project[] = [
     summary:
       "Modul Pelayanan Publik pada SIMAT yang mencakup CRUD, validasi, master layanan, instansi, persyaratan, dokumen, dan alur persetujuan. Data layanan tersedia melalui REST API untuk dashboard SIPP terpisah.",
     role: "Peserta Magang Aptika dan Koordinator Proyek",
+    externalUrl: "https://sipp.tasikmalayakota.go.id/",
+    externalLabel: "Open public SIPP",
     cover: "/projects/simat_sipp/Screenshot 2026-09-18 023244.webp",
     images: [
       "/projects/simat_sipp/Screenshot 2026-09-18 023244.webp",
