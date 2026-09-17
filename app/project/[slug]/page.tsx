@@ -52,6 +52,24 @@ export default async function ProjectDetailPage({ params }: Props) {
             <p>{project.headline}</p>
           </section>
 
+          {project.externalUrl && (
+            <div className="project-external-card">
+              <div className="project-external-copy">
+                <span>Live project</span>
+                <strong>{project.name}</strong>
+              </div>
+              <a
+                href={project.externalUrl}
+                className="project-external-link"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {project.externalLabel ?? "Open project"}
+                <ArrowUpRightIcon size={18} weight="regular" aria-hidden="true" />
+              </a>
+            </div>
+          )}
+
           {project.images.length > 0 ? (
             <section className="project-gallery project-gallery-primary" aria-labelledby="gallery-title">
               <div className="gallery-heading">
