@@ -4,4 +4,7 @@ out
 .vercel
 *.log
 /bahan/
+/anti-slop
 /AGENT.md
+/DESIGN.md
+tmp
